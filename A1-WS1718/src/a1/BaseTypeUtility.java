@@ -6,7 +6,7 @@ public class BaseTypeUtility {
 
 	// statische Methoden getTypeName
     public static String getTypeName(String token) {
-        h
+
     }
 	// statische Methoden isDouble etc.
     public static boolean isByte(String token) {

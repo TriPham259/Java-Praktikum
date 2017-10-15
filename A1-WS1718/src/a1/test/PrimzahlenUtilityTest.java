@@ -21,6 +21,7 @@ public class PrimzahlenUtilityTest {
 	int primZahl = 97;
 	int kleinstePrimZahl = 2;
 
+
 	@Before
 	public void primzahlenSaetze() {
 		primeBis100 = new int[] { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79,
