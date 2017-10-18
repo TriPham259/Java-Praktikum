@@ -45,9 +45,22 @@ public class PrimzahlenUtility {
 	 */
 	public static int[] generiereNachEratosthenes(int n) {
 		int primes_length = (int)Math.round(Math.log(n) / Math.log(2));
-		int[] primes = new int[primes_length];
+		AdditiveIntListe primes = new AdditiveIntListe(primes_length);
 		boolean[] marked = new boolean[n-1];
+		for (int z = 2; z <= Math.sqrt(n); z++) {
+			if (marked[z-2] == false) {
+				primes.add(z);
+				for (int notprime = z*z; notprime <= n; notprime += z) {
+					marked[notprime - 2] = true;
+				}
+			} 
+		}
 		
-		return primes;
+		for (int z = (int)Math.ceil(Math.sqrt(n)); z <= n;z++) {
+			if (marked[z-2] == false) 
+				primes.add(z);
+		}
+		
+		return primes.toArray();
 	}
 }
