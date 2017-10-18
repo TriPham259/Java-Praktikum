@@ -44,8 +44,10 @@ public class PrimzahlenUtility {
 	 * statische Methode -Teil D
 	 */
 	public static int[] generiereNachEratosthenes(int n) {
-		int[] result = new int[n];
-
-		return result;
+		int primes_length = (int)Math.round(Math.log(n) / Math.log(2));
+		int[] primes = new int[primes_length];
+		boolean[] marked = new boolean[n-1];
+		
+		return primes;
 	}
 }
