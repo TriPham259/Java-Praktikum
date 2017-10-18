@@ -7,12 +7,20 @@ public class AdditiveIntListe {
 
 	// TODO
 	private int kapazitaet;
-	private int[] intern = new int [kapazitaet];
+	private int[] intern;
 	private int cursor;
 	
 	public AdditiveIntListe(int kapazitaet) {
 		// TODO
 		this.kapazitaet = kapazitaet;
+		this.cursor = 0;
+		this.intern = new int [kapazitaet];
+	}
+	
+	public AdditiveIntListe() {
+		this.kapazitaet = 0;
+		this.cursor = 0;
+		this.intern = new int [kapazitaet];
 	}
 
 	// add Methode
@@ -20,7 +28,7 @@ public class AdditiveIntListe {
 		if (cursor < intern.length) {
 			intern[cursor] = value;
 		} else {
-			intern =  Arrays.copyOf(intern, kapazitaet * 2);
+			intern =  Arrays.copyOf(intern, kapazitaet + 1);
 			intern[cursor] = value;
 		}
 		return intern;

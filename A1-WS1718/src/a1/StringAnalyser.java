@@ -1,4 +1,4 @@
-package a1;
+ohpackage a1;
 
 public class StringAnalyser {
 
