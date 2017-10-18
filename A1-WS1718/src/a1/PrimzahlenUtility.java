@@ -23,14 +23,14 @@ public class PrimzahlenUtility {
 	 */
 	public static int[] generierePrimzahlen(int bis){
 	    int[] result = new int[bis];
-	    for (int i = 0; i <= bis;) {
-            for (int j =2; j <= bis;) {
-                if (istPrimzahl(i)) {
-                    result[i] = j;
-                    i++;
-                } else j++;
+	    int i = 0, prime = 2;
+            while (prime <= bis) {
+                if (istPrimzahl(prime)) {
+                    result[i] = prime;
+                    i++; prime++;
+                } else prime++;
             }
-        }
+        return result;
     }
 
 	
