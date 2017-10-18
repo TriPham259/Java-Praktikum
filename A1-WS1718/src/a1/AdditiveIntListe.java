@@ -28,7 +28,7 @@ public class AdditiveIntListe {
 		if (cursor < intern.length) {
 			intern[cursor] = value;
 		} else {
-			intern =  Arrays.copyOf(intern, kapazitaet + 1);
+			intern =  Arrays.copyOf(intern, kapazitaet * 2);
 			intern[cursor] = value;
 		}
 		return intern;
