@@ -6,37 +6,33 @@ import java.util.Arrays;
 public class AdditiveIntListe {
 
 	// TODO
-	private int kapazitaet;
 	private int[] intern;
+	private int kapazitaet;
 	private int cursor;
 	
 	public AdditiveIntListe(int kapazitaet) {
 		// TODO
+		this.intern = new int[kapazitaet];
 		this.kapazitaet = kapazitaet;
-		this.cursor = 0;
-		this.intern = new int [kapazitaet];
+		this.cursor = 0; 
 	}
 	
 	public AdditiveIntListe() {
-		this.kapazitaet = 0;
-		this.cursor = 0;
-		this.intern = new int [kapazitaet];
+		// TODO
+		this(10);
 	}
 
 	// add Methode
-	public int[] add(int value) {
-		if (cursor < intern.length) {
-			intern[cursor] = value;
-		} else {
-			intern =  Arrays.copyOf(intern, kapazitaet + 1);
-			intern[cursor] = value;
-		}
-		return intern;
+	public void add(int value) {
+		if (cursor >= intern.length) 
+			intern = Arrays.copyOf(intern, intern.length + kapazitaet);
+		intern[cursor] = value;
+		cursor++;
 	}
 	
 	// size Methode
 	public int size() {
-		return this.cursor;
+		return cursor;
 	}
 	
 	// toArray Methode
