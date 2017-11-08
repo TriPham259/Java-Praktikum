@@ -21,6 +21,9 @@ public class WikiAnimationFilmParser {
 
 	public void echoPage() {
 		// TODO
+		while (this.animationScanner.hasNextLine()) {
+			System.out.println(this.animationScanner.nextLine());
+		}
 	}
 
 	/**
