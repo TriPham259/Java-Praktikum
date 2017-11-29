@@ -14,22 +14,26 @@ public class WikiAnimationFilmParserMain {
 	 * Gegeben: main zum Starten des Programmss
 	 */
 	public static void main(String[] args) throws MalformedURLException, IOException, ParseException {
-
 		String fileName = "animation.html";
-		
+
 		/*
-		 * Damit das Programm auch von der Console korrekt startet, muss an erster Stelle des classpath immer
-		 * der Pfad zum bin Verzeichnis des Projekts der Aufgabe 2 stehen !!!!!
+		 * Damit das Programm auch von der Console korrekt startet, muss an erster
+		 * Stelle des classpath immer der Pfad zum bin Verzeichnis des Projekts der
+		 * Aufgabe 2 stehen !!!!!
 		 */
 		Path animationPath = Paths.get(System.getProperty("java.class.path").split(";")[0].trim(), fileName);
-		
+
 		WikiAnimationFilmParser parser = new WikiAnimationFilmParser("file:///" + animationPath.toAbsolutePath());
+
+		// redirect the output of echoPage to firstParse.txt
+		// java -cp D:\GitHub\PM2\A2-WS718\bin parser.WikiAnimationFilmParserMain > firstParse.txt
+//		parser.echoPage();
+
 		ppList(parser.contentToFilmList());
 	}
 
 	/*
-	 * Zeilenweise Ausgabe einer Liste
-	 * Gegeben
+	 * Zeilenweise Ausgabe einer Liste Gegeben
 	 */
 	private static void ppList(List<?> list) {
 		for (Object o : list) {
@@ -37,7 +41,7 @@ public class WikiAnimationFilmParserMain {
 		}
 
 	}
-	
+
 	/**
 	 * Untersuchen der Systemumgebung
 	 */
